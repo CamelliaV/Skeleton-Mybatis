@@ -1,0 +1,11 @@
+<configuration>
+    <!-- configure datasource mysql8.0 -->
+    <dataSource>
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/skeleton_mybatis"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="123456"></property>
+    </dataSource>
+    <!-- record full paths of mapper files (resource) to keep only one entrance -->
+    <mapper resource="UserMapper.xml"></mapper>
+</configuration>

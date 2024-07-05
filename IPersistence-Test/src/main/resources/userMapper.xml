@@ -1,0 +1,14 @@
+<!-- using namespace to tell apart sql statements (different table) with same id -->
+<mapper namespace="user">
+    <!-- locate sql statements with id -->
+    <!-- resultType: full path of the result class to map fields to attributes using reflection  -->
+    <select id="selectList" resultType="com.learn.pojo.User">
+        select * from user
+    </select>
+    <!-- unique identifier: namespace.id (statementId) -->
+    <!-- parameterType: encapsulate params to an entity, still utilizing reflection -->
+    <!-- ? -> #{attr}: ? is for JDBC, cannot locate which attribute of user is to be placed -->
+    <select id="selectOne" resultType="com.learn.pojo.User" parameterType="com.learn.pojo.User">
+        select * from user where id = #{id} and username = #{username}
+    </select>
+</mapper>
